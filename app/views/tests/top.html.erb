@@ -1,2 +1,26 @@
-<h1>Tests#top</h1>
-<p>Find me in app/views/tests/top.html.erb</p>
+<h1 class="jquery">Hello World</h1>
+
+<!--<div id="reiwa_area"></div>-->
+<!--<input type="button" value="check" onclick="myfunc()">-->
+<script>
+  let today = new Date();
+  let seireki = today.getFullYear();
+  let reiwa = seireki - 2018;
+  console.log("今年は西暦" + seireki + "年で、");
+  console.log("令和" + reiwa + "年です");
+
+  let saikoro = parseInt(Math.random() * 6) + 1;
+  console.log("サイコロの目は" + saikoro + "です。")
+  if(saikoro == 6) {
+    console.log("6マス進めます。やったね！");
+  } else {
+    console.log(saikoro + "マス進んでください。");
+  }
+  // let myfunc = function() {
+  //   let reiwa = seireki - 2018;
+  //   document.getElementById('reiwa_area').textContent = reiwa;
+  // }
+
+</script>
+
+
