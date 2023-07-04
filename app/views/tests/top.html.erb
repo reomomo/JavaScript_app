@@ -1,25 +1,34 @@
-<h1 class="jquery">Hello World</h1>
+<h3 class="jquery">クリックすると赤くなります。</h3>
+<h3 id="clickShow">今年は何年？（ここをクリックすると答えが出ます）</h3>
+<p id="hiddenReiwa" style="display: none;"></p>
+<h3>リロードするとサイコロの目が変わります。</h3>
+<div id="saikoro_area"></div>
+<h3>for文で繰り返し処理をする</h3>
+<div id="number_area"></div>
+<script type="text/javascript">
+  var clickShow = document.getElementById('clickShow');
+  var hiddenReiwa = document.getElementById('hiddenReiwa');
+  clickShow.addEventListener('click', function() {
+    hiddenReiwa.style.display = 'block';
+  });
 
-<!--<div id="reiwa_area"></div>-->
-<!--<input type="button" value="check" onclick="myfunc()">-->
-<script>
   let today = new Date();
   let seireki = today.getFullYear();
   let reiwa = seireki - 2018;
-  console.log("今年は西暦" + seireki + "年で、");
-  console.log("令和" + reiwa + "年です");
+  document.getElementById('hiddenReiwa').textContent = "今年は西暦" + seireki + "年で、令和" + reiwa + "年です";
 
   let saikoro = parseInt(Math.random() * 6) + 1;
-  console.log("サイコロの目は" + saikoro + "です。")
+  var saikoroArea = document.getElementById('saikoro_area');
+  saikoroArea.textContent = "サイコロの目は" + saikoro + "です。" ;
   if(saikoro == 6) {
-    console.log("6マス進めます。やったね！");
+    saikoroArea.textContent += saikoro + "マス進めます。やったね！";
   } else {
-    console.log(saikoro + "マス進んでください。");
+    saikoroArea.textContent += saikoro + "マス進んでください。";
   }
-  // let myfunc = function() {
-  //   let reiwa = seireki - 2018;
-  //   document.getElementById('reiwa_area').textContent = reiwa;
-  // }
+
+  for(i = 0; i < 6; i++) {
+    document.getElementById('number_area').textContent = i + 1 + "回繰り返し処理をしました";
+  }
 
 </script>
 
